@@ -1,4 +1,3 @@
-
 let board = document.querySelector('.board');
 let sourceCellIndex = -1; // Variable to store the index of the source cell
 
@@ -32,17 +31,16 @@ for (let i = 0; i < 64; i++) {
     cell.innerHTML = '';
   }
   if (i === 0) {
-    imageContainer.addEventListener('dragstart', function(event) {
+    imageContainer.addEventListener('click', function(event) {
       sourceCellIndex = i; // Set the source cell index
-      event.dataTransfer.setData('text/plain', 'checker2.jpg');
     });
-  } else if ((i === 9) || (i === 16)){
+  } else if ((i === 9 || i === 16)){
     
-    cell.addEventListener('dragover', function(event) {
+    cell.addEventListener('click', function(event) {
       event.preventDefault();
     });
 
-    cell.addEventListener('drop', function(event) {
+    cell.addEventListener('click', function(event) {
       event.preventDefault();
       const dropElementDom = document.querySelector('.board .cell:nth-child(1) .piece2');
 
